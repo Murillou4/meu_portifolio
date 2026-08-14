@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="800" viewBox="0 0 1000 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171717"/>
+      <stop offset="1" stop-color="#0A0A0A"/>
+    </linearGradient>
+    <linearGradient id="badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9D70C3"/>
+      <stop offset="1" stop-color="#D3E97A"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="800" rx="28" fill="url(#bg)"/>
+
+  <!-- subtle grid dots -->
+  <g fill="#1F1F1F">
+    <circle cx="120" cy="120" r="4"/>
+    <circle cx="240" cy="200" r="4"/>
+    <circle cx="880" cy="120" r="4"/>
+    <circle cx="760" cy="220" r="4"/>
+    <circle cx="120" cy="680" r="4"/>
+    <circle cx="880" cy="680" r="4"/>
+  </g>
+
+  <!-- connection lines -->
+  <path d="M230 400 L 442 400" stroke="#9D70C3" stroke-width="5" fill="none" opacity="0.65" stroke-linecap="round"/>
+  <path d="M558 400 L 770 400" stroke="#D3E97A" stroke-width="5" fill="none" opacity="0.65" stroke-linecap="round"/>
+
+  <!-- data pulses -->
+  <circle cx="330" cy="400" r="10" fill="#9D70C3" filter="url(#glow)"/>
+  <circle cx="672" cy="400" r="10" fill="#D3E97A" filter="url(#glow)"/>
+
+  <!-- reconnection arc (top right) -->
+  <path d="M 745 340 A 120 120 0 0 0 625 268" stroke="#9D70C3" stroke-width="5" fill="none" stroke-dasharray="10 10" stroke-linecap="round" opacity="0.8"/>
+  <polygon points="615,258 640,272 622,290" fill="#9D70C3"/>
+
+  <!-- central badge (socket) -->
+  <rect x="442" y="282" width="116" height="180" rx="26" fill="url(#badge)"/>
+  <circle cx="484" cy="336" r="13" fill="#1A1A1A"/>
+  <circle cx="516" cy="336" r="13" fill="#1A1A1A"/>
+  <rect x="466" y="400" width="14" height="58" rx="7" fill="#1A1A1A"/>
+  <rect x="520" y="400" width="14" height="58" rx="7" fill="#1A1A1A"/>
+
+  <!-- heartbeat line -->
+  <path d="M 250 640 L 330 640 L 350 596 L 382 686 L 402 640 L 470 640 L 500 640 L 530 640 L 600 640" stroke="#D3E97A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="500" cy="640" r="7" fill="#D3E97A" filter="url(#glow)"/>
+
+  <!-- client node (left) -->
+  <circle cx="230" cy="400" r="30" fill="#0A0A0A" stroke="#9D70C3" stroke-width="6"/>
+  <circle cx="230" cy="400" r="8" fill="#9D70C3"/>
+
+  <!-- server node (right) -->
+  <circle cx="770" cy="400" r="30" fill="#0A0A0A" stroke="#D3E97A" stroke-width="6"/>
+  <circle cx="770" cy="400" r="8" fill="#D3E97A"/>
+</svg>
